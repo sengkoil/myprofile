@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ts. Mohd Sufian Bin Ahmad - Digital Profile</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a', // Slate 900
+                        secondary: '#3b82f6', // Blue 500
+                        accent: '#14b8a6', // Teal 500
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .timeline-dot {
+            @apply w-4 h-4 bg-secondary rounded-full absolute -left-[9px] top-1 border-4 border-white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl text-primary">Ts. Sufian<span class="text-secondary">.</span></span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-secondary font-medium transition">Profil</a>
+                    <a href="#experience" class="text-gray-600 hover:text-secondary font-medium transition">Pengalaman</a>
+                    <a href="#education" class="text-gray-600 hover:text-secondary font-medium transition">Pendidikan & Sijil</a>
+                    <a href="#projects" class="text-gray-600 hover:text-secondary font-medium transition">Projek</a>
+                    <a href="#contact" class="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition shadow-md">Hubungi Saya</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-md">Profil</a>
+                <a href="#experience" class="block px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-md">Pengalaman</a>
+                <a href="#education" class="block px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-md">Pendidikan</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-md">Projek</a>
+                <a href="#contact" class="block px-3 py-2 text-secondary font-bold hover:bg-gray-50 rounded-md">Hubungi Saya</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-2/3 space-y-6">
+                    <div class="inline-block px-4 py-1 bg-white/10 rounded-full text-sm font-medium border border-white/20 backdrop-blur-md">
+                        <i class="fas fa-shield-alt text-accent mr-2"></i> 22+ Tahun Pengalaman IT
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        Ts. Mohd Sufian <br> <span class="text-secondary">Bin Ahmad</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-gray-300 font-light">
+                        Ketua Bahagian Infrastruktur | Pakar Pusat Data & Keselamatan Siber
+                    </h2>
+                    <p class="text-gray-400 max-w-2xl text-lg">
+                        Teknologis Profesional (MBOT) yang komited dalam merancang, membangun, dan mengurus infrastruktur IT berskala besar, pusat data, dan pemulihan bencana (DRC) untuk sektor awam dan pendidikan. Ahli The Open Web Application Security Project (OWASP).
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="mailto:sufian@ict.upsi.edu.my" class="bg-secondary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition shadow-lg flex items-center gap-2">
+                            <i class="fas fa-envelope"></i> Emel Saya
+                        </a>
+                        <a href="https://www.linkedin.com/in/sufianahmad14/" target="_blank" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-lg font-medium transition shadow-lg flex items-center gap-2">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="relative">
+                        <!-- Placeholder for User Image -->
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-slate-700 rounded-full border-4 border-white/10 shadow-2xl overflow-hidden flex items-center justify-center text-gray-500 flex-col">
+                           <i class="fas fa-user-circle text-6xl mb-2"></i>
+                           <span class="text-sm text-center px-4">[Sila gantikan tag img di sini dengan gambar anda]</span>
+                           <!-- <img src="URL_GAMBAR_ANDA_DI_SINI" alt="Ts. Mohd Sufian" class="w-full h-full object-cover"> -->
+                        </div>
+                        <div class="absolute bottom-4 right-4 bg-white p-3 rounded-full shadow-xl">
+                            <i class="fas fa-server text-secondary text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats/Highlights -->
+    <section class="py-8 bg-white border-b border-gray-100 shadow-sm relative -mt-8 mx-4 sm:mx-auto max-w-5xl rounded-xl z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-gray-100">
+            <div>
+                <div class="text-3xl font-bold text-primary">22+</div>
+                <div class="text-sm text-gray-500 font-medium uppercase tracking-wider mt-1">Tahun Pengalaman</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-primary">50+</div>
+                <div class="text-sm text-gray-500 font-medium uppercase tracking-wider mt-1">Projek Infrastruktur</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-primary">15+</div>
+                <div class="text-sm text-gray-500 font-medium uppercase tracking-wider mt-1">Pensijilan Profesional</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-primary">1</div>
+                <div class="text-sm text-gray-500 font-medium uppercase tracking-wider mt-1">Sektor Universiti (UPSI)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary">Pengalaman Kerjaya</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="relative border-l-2 border-gray-200 ml-3 md:ml-0">
+                
+                <!-- Experience 1 -->
+                <div class="mb-10 pl-8 relative">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <span class="inline-block py-1 px-3 rounded bg-blue-50 text-secondary text-sm font-semibold mb-2">Mac 2026 - Sekarang</span>
+                        <h3 class="text-xl font-bold text-primary">Pegawai Teknologi Maklumat / Ketua Bahagian Infrastruktur</h3>
+                        <h4 class="text-lg text-gray-600 mb-3">Universiti Pendidikan Sultan Idris (UPSI)</h4>
+                        <p class="text-gray-600">Menerajui perancangan, pembangunan dan pembinaan infrastruktur pusat data, pelayan, storan, pemulihan bencana (DRC) serta keselamatan ICT Universiti.</p>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="mb-10 pl-8 relative">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <span class="inline-block py-1 px-3 rounded bg-blue-50 text-secondary text-sm font-semibold mb-2">Jan 2015 - Feb 2026 (11 Tahun)</span>
+                        <h3 class="text-xl font-bold text-primary">Pegawai Teknologi Maklumat / Ketua Unit Pusat Data</h3>
+                        <h4 class="text-lg text-gray-600 mb-3">Universiti Pendidikan Sultan Idris (UPSI)</h4>
+                        <p class="text-gray-600">Mengurus operasi, penyelenggaraan, dan penyediaan spesifikasi teknikal untuk pusat data utama, menaiktaraf keselamatan siber, serta mengawalselia perolehan aset ICT bernilai jutaan ringgit.</p>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="mb-10 pl-8 relative">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <span class="inline-block py-1 px-3 rounded bg-gray-100 text-gray-600 text-sm font-semibold mb-2">Dis 2007 - Dis 2014 (7 Tahun)</span>
+                        <h3 class="text-xl font-bold text-primary">Pegawai Teknologi Maklumat (Unit Rangkaian & Server)</h3>
+                        <h4 class="text-lg text-gray-600 mb-3">Universiti Pendidikan Sultan Idris (UPSI)</h4>
+                    </div>
+                </div>
+
+                <!-- Experience 4 -->
+                <div class="pl-8 relative">
+                    <div class="timeline-dot bg-gray-400 border-white"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <span class="inline-block py-1 px-3 rounded bg-gray-100 text-gray-600 text-sm font-semibold mb-2">2002 - 2007</span>
+                        <h3 class="text-xl font-bold text-primary">Jurutera Sistem & Eksekutif IT</h3>
+                        <h4 class="text-md text-gray-600 mb-2">Formis Network Services | Impressive Communication | TNB Properties</h4>
+                        <p class="text-gray-500 text-sm">Terlibat dalam pelbagai projek rangkaian, telekomunikasi dan pengurusan IT untuk GLC dan agensi kerajaan.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary">Pendidikan & Pensijilan Profesional</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Academic -->
+                <div>
+                    <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+                        <i class="fas fa-graduation-cap text-accent"></i> Kelayakan Akademik
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-accent pl-4">
+                            <h4 class="text-lg font-bold">Ijazah Sarjana Sains (Perangkaian Komputer)</h4>
+                            <p class="text-gray-600">Universiti Teknologi MARA (UiTM) | 2013</p>
+                            <p class="text-sm text-gray-500 mt-1">Disertasi: Effective Data Centre Management Via Puppet</p>
+                        </div>
+                        <div class="border-l-4 border-gray-300 pl-4">
+                            <h4 class="text-lg font-bold">Ijazah Sarjana Muda Teknologi Maklumat (Kepujian)</h4>
+                            <p class="text-gray-600">Universiti Utara Malaysia (UUM) | 2002</p>
+                            <p class="text-sm text-gray-500 mt-1">Pengkhususan: Kepintaran Buatan (AI)</p>
+                        </div>
+                        <div class="border-l-4 border-gray-300 pl-4">
+                            <h4 class="text-lg font-bold">Teknologis Profesional (Ts.) & Teknologis Berijazah</h4>
+                            <p class="text-gray-600">Lembaga Teknologis Malaysia (MBOT) | 2017 & 2018</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div>
+                    <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+                        <i class="fas fa-certificate text-secondary"></i> Sijil Kompetensi Utama
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 flex items-start gap-3">
+                            <i class="fab fa-google text-2xl text-blue-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Google Certified Educator L1 & L2</h4>
+                                <span class="text-xs text-gray-500">2025</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 flex items-start gap-3">
+                            <i class="fas fa-robot text-2xl text-purple-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Gemini Certified Educator</h4>
+                                <span class="text-xs text-gray-500">2025</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 flex items-start gap-3">
+                            <i class="fas fa-shield-halved text-2xl text-red-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Hillstone Certified Security Associate</h4>
+                                <span class="text-xs text-gray-500">2025</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 flex items-start gap-3">
+                            <i class="fas fa-user-secret text-2xl text-green-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Certified Ethical Hacker (CEH)</h4>
+                                <span class="text-xs text-gray-500">2020</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 flex items-start gap-3">
+                            <i class="fas fa-cloud text-2xl text-blue-400 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Sangfor Cloud Infrastructure</h4>
+                                <span class="text-xs text-gray-500">2021</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 flex items-start gap-3">
+                            <i class="fab fa-linux text-2xl text-gray-800 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">LPI Linux Essentials</h4>
+                                <span class="text-xs text-gray-500">2020</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                        <p class="text-sm text-blue-800 font-medium">
+                            <i class="fas fa-award mr-2"></i>Micro Credential - Ujian dan Penilaian Penembusan Keselamatan Siber (SKPK) 2023
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio -->
+    <section id="projects" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">Sorotan Projek Infrastruktur & Keselamatan</h2>
+                <p class="text-gray-400 mt-3">Sebahagian daripada 50+ projek utama yang diuruskan di UPSI dan agensi luar.</p>
+                <div class="w-20 h-1 bg-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-secondary transition group">
+                    <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mb-4 group-hover:bg-secondary transition">
+                        <i class="fas fa-server text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Pusat Data & DRC</h3>
+                    <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                        <li>Pembangunan Pusat Pemulihan Bencana (DRC) di Kampus Sultan Azlan Shah (2024).</li>
+                        <li>Migrasi server, storan & pangkalan data ke Pusat Data Baharu UPSI.</li>
+                        <li>Pembangunan Pusat Data NCDC (NCDRC).</li>
+                    </ul>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-accent transition group">
+                    <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent transition">
+                        <i class="fas fa-shield-virus text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Keselamatan Siber</h3>
+                    <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                        <li>Projek Elastic Stack dan Wazuh untuk pemantauan rangkaian berpusat (2023).</li>
+                        <li>Penyelesaian Advanced Persistent Threat (APT) & Keselamatan Pelayan.</li>
+                        <li>Pelaksanaan platform T-Pot Honeypot bersama APNIC (2017).</li>
+                    </ul>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-blue-400 transition group">
+                    <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-400 transition">
+                        <i class="fas fa-cloud text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Infrastruktur & Awan (Cloud)</h3>
+                    <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                        <li>Pelaksanaan Google Workspace for Education Plus Berpusat (2024).</li>
+                        <li>Naiktaraf Makmal Fakulti META (AI, Simulasi & SOC) (2025).</li>
+                        <li>Sumber Perkomputeran Maya (SDDC) & Private Cloud UPSI.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <section id="contact" class="py-12 bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold text-primary mb-6">Hubungi Saya</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 mb-8 text-gray-600">
+                <a href="mailto:sufian@ict.upsi.edu.my" class="flex items-center gap-2 hover:text-secondary transition">
+                    <i class="fas fa-envelope text-xl"></i> sufian@ict.upsi.edu.my
+                </a>
+                <span class="flex items-center gap-2">
+                    <i class="fas fa-phone text-xl"></i> 019-233 7117
+                </span>
+                <span class="flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-xl"></i> Tanjong Malim, Perak
+                </span>
+            </div>
+            
+            <p class="text-gray-500 text-sm">
+                &copy; 2026 Ts. Mohd Sufian Bin Ahmad. Semua Hak Cipta Terpelihara.<br>
+              
+            </p>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
